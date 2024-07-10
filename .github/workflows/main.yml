@@ -1,0 +1,34 @@
+name: Deploy via FTP
+
+on:
+  push:
+    branches:
+      - master  # ou o branch que você deseja usar para o deploy
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20.0.0'  # ou a versão do Node.js que você está usando
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build Nuxt.js application
+      run: npm run generate
+
+    - name: Deploy to FTP server
+      uses: sebastianpopp/ftp-action@v1
+      with:
+        host: ${{ secrets.FTP_HOST }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        localDir: .output/public  # diretório de saída padrão do Nuxt 3
+        remoteDir: /public_html  # caminho no servidor FTP
