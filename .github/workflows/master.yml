@@ -26,9 +26,9 @@ jobs:
 
     - name: Deploy to FTP server
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-      with:
-        host: ${{ secrets.FTP_HOST }}
-        username: ${{ secrets.FTP_USERNAME }}
+      with:        
+        server: ftp.hwrconsult.com
+        username: github@hwrconsult.com
         password: ${{ secrets.FTP_PASSWORD }}
-        localDir: .output/public  # diretório de saída padrão do Nuxt 3
-        remoteDir: /public_html  # caminho no servidor FTP
+        local-dir: .output/public
+        server-dir	: /public_html
