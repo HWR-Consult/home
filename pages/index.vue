@@ -1,5 +1,43 @@
 <script setup lang="ts">
 
+useHead({
+  script: [{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "HWR Tech Consult",
+    "url": "https://www.hwrconsult.com/",
+    "logo": "https://www.hwrconsult.com/img/logo.png",
+    "description": "HWR Tech Consult provides expert consulting in Vue.js, Nuxt.js, Node.js, and Spring Boot for customized technology solutions.",
+    "sameAs": [
+      "https://www.linkedin.com/company/hwr-tech-consult/"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+55-41-9845-7859",
+      "contactType": "Customer Service",
+      "areaServed": "BR"
+    }
+  },
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "HWR Tech Consult",
+      "url": "https://www.hwrconsult.com/",
+      "logo": "https://www.hwrconsult.com/img/logo.png",
+      "description": "A HWR Tech Consult oferece consultoria especializada em Vue.js, Nuxt.js, Node.js e Spring Boot para soluções tecnológicas personalizadas.",
+      "sameAs": [
+        "https://www.linkedin.com/company/hwr-tech-consult/"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+55-41-9845-7859",
+        "contactType": "Atendimento ao Cliente",
+        "areaServed": "BR"
+      }
+    }],
+  __dangerouslyDisableSanitizers: ['script'],
+})
+
 const disableSave = computed(() => {
   return !contact.name || !contact.email || !contact.company || !contact.role || !contact.message || !contact.phone;
 });
@@ -60,7 +98,7 @@ const products = ref([
           <img :src="slotProps.item.thumbnailImageSrc" :alt="slotProps.item.alt" style="display: block;" />
       </template>
   </Galleria>
-    
+
     <Container class="bg-[--p-toolbar-background] py-10">
     <section>
       <h1 class="text-5xl text-center text-[#7c35ce]">Quem é a HWR Consult?</h1>
@@ -150,7 +188,7 @@ const products = ref([
           </template>
       </Carousel>
     </section>
-    
+
   </Container>
     <Container class="py-10">
       <section class="py-10">
@@ -183,7 +221,7 @@ const products = ref([
         </div>
       </div>
     </section>
-    
+
   </Container>
   </NuxtLayout>
 </template>
