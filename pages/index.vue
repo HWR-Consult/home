@@ -33,6 +33,20 @@ const images = ref([
   { itemImageSrc: '/img/slide-01.jpg', alt: 'Description for Image 1', title: 'Title 1' }
 ])
 
+const products = ref([
+  { itemImageSrc: '/img/clientes/01.jpg' },
+  { itemImageSrc: '/img/clientes/02.jpg' },
+  { itemImageSrc: '/img/clientes/03.jpg' },
+  { itemImageSrc: '/img/clientes/04.jpg' },
+  { itemImageSrc: '/img/clientes/05.jpg' },
+  { itemImageSrc: '/img/clientes/06.jpg' },
+  { itemImageSrc: '/img/clientes/07.jpg' },
+  { itemImageSrc: '/img/clientes/08.jpg' },
+  { itemImageSrc: '/img/clientes/09.jpg' },
+  { itemImageSrc: '/img/clientes/10.jpg' },
+  { itemImageSrc: '/img/clientes/11.jpg' },
+  { itemImageSrc: '/img/clientes/12.jpg' }
+])
 </script>
 
 <template>
@@ -127,6 +141,17 @@ const images = ref([
       </div>
     </section>
     </Container>
+    <Container class="py-10">
+      <section class="py-10">
+      <h1 class="text-5xl text-center text-[#7c35ce] pb-10">Clientes</h1>
+      <Carousel :value="products" :numVisible="10" :numScroll="3" class="py-5">
+          <template #item="slotProps">
+              <img :src="slotProps.data.itemImageSrc" alt="">
+          </template>
+      </Carousel>
+    </section>
+    
+  </Container>
     <Container class="py-10">
       <section class="py-10">
       <h1 class="text-5xl text-center text-[#7c35ce]">Quem somos?</h1>
