@@ -34,7 +34,7 @@ export default defineNuxtConfig({
   ],
   modules: [
     '@primevue/nuxt-module',
-    '@zadigetvoltaire/nuxt-gtm' 
+    '@zadigetvoltaire/nuxt-gtm'
   ],
   postcss: {
     plugins: {
@@ -48,7 +48,10 @@ export default defineNuxtConfig({
   primevue: {
     options: {
       theme: {
-        preset: Aura
+        preset: Aura,
+        options: {
+          darkModeSelector: '.dark-mode',
+        }
       }
     }
   },
@@ -59,7 +62,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     gtm: {
-      id: 'GTM-KZVCGRN7' 
+      id: 'GTM-KZVCGRN7'
     }
   }
 });

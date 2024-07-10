@@ -141,17 +141,17 @@ const products = ref([
       </h1>
       <div class="flex mt-6 gap-4 text-center">
           <div class="flex-1">
-            <img src="/img/about-01.jpg" alt="Desenvolvimento de Software" class="mx-auto">
+            <img src="/img/about-01.jpg" alt="Desenvolvimento de Software" class="mx-auto rounded-full">
             <h2 class="text-xl my-3 text-[#7c35ce]"> Desenvolvimento de Software </h2>
             <p class=""> Criamos sistemas robustos e eficientes que atendem às exigências específicas de cada projeto.</p>
           </div>
           <div class="flex-1">
-            <img src="/img/about-02.jpg" alt="Consultoria Técnica" class="mx-auto">
+            <img src="/img/about-02.jpg" alt="Consultoria Técnica" class="mx-auto rounded-full">
             <h2 class="text-xl my-3 text-[#7c35ce]"> Consultoria Técnica</h2>
             <p class="">  Oferecemos orientação especializada para ajudar nossos clientes a tomar decisões informadas sobre tecnologia e implementação.</p>
           </div>
           <div class="flex-1">
-            <img src="/img/about-03.jpg" alt="Suporte e Manutenção" class="mx-auto">
+            <img src="/img/about-03.jpg" alt="Suporte e Manutenção" class="mx-auto rounded-full">
             <h2 class="text-xl my-3 text-[#7c35ce]"> Suporte e Manutenção</h2>
             <p class="">Garantimos que as soluções implantadas continuem a funcionar perfeitamente, oferecendo suporte contínuo e serviços de manutenção.</p>
           </div>
