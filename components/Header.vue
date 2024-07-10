@@ -3,12 +3,10 @@
 </script>
 
 <template>
-  <Toolbar style="border: 0">
+  <Container class="bg-[--p-toolbar-background]">
+    <Toolbar style="border: 0">
     <template #start>
       <img src="/img/logo.png" width="200" height="50">
-<!--      <Button icon="pi pi-plus" class="mr-2" severity="secondary" text />-->
-<!--      <Button icon="pi pi-print" class="mr-2" severity="secondary" text />-->
-<!--      <Button icon="pi pi-upload" severity="secondary" text />-->
     </template>
 
     <template #center>
@@ -21,19 +19,13 @@
     </template>
 
     <template #end>
-      <Button class="header-buttons" label="Quem somos" link />
+      <Button icon="pi pi-whatsapp" as="a" label="Entrar em contato" href="https://api.whatsapp.com/send?phone=5541998457859" target="_blank" />
+      <!-- <Button class="header-buttons" label="Quem somos" link />
       <Button class="header-buttons" label="Como trabalhamos" link />
       <Button class="header-buttons" label="Treinamento" link />
-      <Button class="header-buttons" label="Contato" link />
+      <Button class="header-buttons" label="Contato" link /> -->
     </template>
   </Toolbar>
+  </Container>
+  
 </template>
-
-<style>
-.header-buttons {
- & .p-button-label {
-   color: #4B4B4B !important;
- }
-}
-
-</style>

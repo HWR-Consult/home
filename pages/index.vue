@@ -22,68 +22,96 @@ const contact = reactive<Contact>({
   phone: '',
 });
 
+const responsiveOptions = ref({
+  breakpoint: '1250px',
+  numVisible: 3,
+  numScroll: 3,
+});
+
+const images = ref([
+  { itemImageSrc: '/img/slide-02.jpg', alt: 'Description for Image 2', title: 'Title 2' },
+  { itemImageSrc: '/img/slide-01.jpg', alt: 'Description for Image 1', title: 'Title 1' }
+])
+
 </script>
 
 <template>
   <NuxtLayout name="default">
-    <section class="mb-7">
-      <h1 class="text-5xl text-center text-[#5E2B97]">Quem é a HWR Consult?</h1>
-      <p class="mt-4 text-xl text-center text-[#4B4B4B]">
-        A HWR Tech Consult é uma empresa séria, composta por profissionais com mais de 30 anos de experiência em software embarcado para empresas. Nosso compromisso é entender profundamente os problemas de nossos clientes e oferecer soluções personalizadas que atendam às necessidades específicas de cada negócio.
+    <Galleria :value="images" :responsiveOptions="responsiveOptions" :numVisible="5" :circular="true" containerStyle="border:0;"
+    :showItemNavigators="true" :showThumbnails="false">
+      <template #item="slotProps">
+          <img :src="slotProps.item.itemImageSrc" :alt="slotProps.item.alt" style="width: 100%; display: block;" />
+      </template>
+      <template #thumbnail="slotProps">
+          <img :src="slotProps.item.thumbnailImageSrc" :alt="slotProps.item.alt" style="display: block;" />
+      </template>
+  </Galleria>
+    
+    <Container class="bg-[--p-toolbar-background] py-10">
+    <section>
+      <h1 class="text-5xl text-center text-[#7c35ce]">Quem é a HWR Consult?</h1>
+      <p class="mt-4 text-xl text-center">
+        A HWR Tech Consult é uma empresa séria, composta por profissionais com mais de 30 anos de experiência em software para empresas. Nosso compromisso é entender profundamente os problemas de nossos clientes e oferecer soluções personalizadas que atendam às necessidades específicas de cada negócio.
       </p>
     </section>
+  </Container>
+  <Container class="py-10">
     <section class="mb-7">
-      <h1 class="text-5xl text-center text-[#5E2B97]">
+      <h1 class="text-5xl text-center text-[#7c35ce]">
         O que fazemos?
       </h1>
       <div class="flex mt-7">
-        <div class="flex">
+        <div class="flex gap-4">
           <div class="flex-1">
-            <h2 class="text-2xl text-[#5E2B97]">Nossa abordagem: </h2>
+            <div>
+              <h2 class="text-xl my-3 text-[#7c35ce]">Entendimento Profundo dos Problemas dos Clientes</h2>
+              <p class="mt-3"> Antes de qualquer coisa, ouvimos e compreendemos as dificuldades e os objetivos dos nossos clientes. Acreditamos que uma solução eficaz começa com uma compreensão completa do problema.</p>
+            </div>
+            <div>
+              <h2 class="text-xl my-3 text-[#7c35ce]">Soluções Personalizadas</h2>
+              <p class="mt-3"> Sabemos que cada negócio é único. Por isso, desenvolvemos soluções sob medida que atendem às necessidades específicas de cada cliente, garantindo assim maior eficiência e resultados mais satisfatórios.</p>
+            </div>
           </div>
           <div class="flex-1">
             <div>
-              <h2 class="text-xl my-3 text-[#5E2B97]">Entendimento Profundo dos Problemas dos Clientes:</h2>
-              <p class="mt-3 text-[#4B4B4B]"> Antes de qualquer coisa, ouvimos e compreendemos as dificuldades e os objetivos dos nossos clientes. Acreditamos que uma solução eficaz começa com uma compreensão completa do problema.</p>
+              <h2 class="text-xl my-3 text-[#7c35ce]">Experiência e Expertise</h2>
+              <p class="">Com uma equipe altamente qualificada e experiente, acumulando mais de três décadas no setor, estamos preparados para enfrentar os desafios mais complexos do mercado.</p>
             </div>
             <div>
-              <h2 class="text-xl my-3 text-[#5E2B97]">Soluções Personalizadas:</h2>
-              <p class="mt-3 text-[#4B4B4B]"> Sabemos que cada negócio é único. Por isso, desenvolvemos soluções sob medida que atendem às necessidades específicas de cada cliente, garantindo assim maior eficiência e resultados mais satisfatórios.</p>
-            </div>
-            <div>
-              <h2 class="text-xl my-3 text-[#5E2B97]">Experiência e Expertise:</h2>
-              <p class="text-[#4B4B4B]">Com uma equipe altamente qualificada e experiente, acumulando mais de três décadas no setor, estamos preparados para enfrentar os desafios mais complexos do mercado.</p>
-            </div>
-            <div>
-              <h2 class="text-xl my-3 text-[#5E2B97]">Tecnologia de Ponta:</h2>
-              <p class="text-[#4B4B4B]">Utilizamos as tecnologias mais avançadas em software embarcado para garantir que nossos clientes tenham acesso às melhores ferramentas e soluções disponíveis.</p>
+              <h2 class="text-xl my-3 text-[#7c35ce]">Tecnologia de Ponta</h2>
+              <p class="">Utilizamos as tecnologias mais avançadas em software para garantir que nossos clientes tenham acesso às melhores ferramentas e soluções disponíveis.</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="flex mt-6">
-        <h2 class="text-2xl flex-1 text-[#5E2B97]">Nossos Serviços: </h2>
-        <div class="flex-1">
-          <div>
-            <h2 class="text-xl my-3 text-[#5E2B97]"> Desenvolvimento de Software Embarcado: </h2>
-            <p class="text-[#4B4B4B]"> Criamos sistemas robustos e eficientes que atendem às exigências específicas de cada projeto.</p>
+      <h1 class="text-5xl text-center text-[#7c35ce] mt-7">
+        Nossos Serviços:
+      </h1>
+      <div class="flex mt-6 gap-4 text-center">
+          <div class="flex-1">
+            <img src="/img/about-01.jpg" alt="Desenvolvimento de Software" class="mx-auto">
+            <h2 class="text-xl my-3 text-[#7c35ce]"> Desenvolvimento de Software </h2>
+            <p class=""> Criamos sistemas robustos e eficientes que atendem às exigências específicas de cada projeto.</p>
           </div>
-          <div>
-            <h2 class="text-xl my-3 text-[#5E2B97]"> Consultoria Técnica:</h2>
-            <p class="text-[#4B4B4B]">  Oferecemos orientação especializada para ajudar nossos clientes a tomar decisões informadas sobre tecnologia e implementação.</p>
+          <div class="flex-1">
+            <img src="/img/about-02.jpg" alt="Consultoria Técnica" class="mx-auto">
+            <h2 class="text-xl my-3 text-[#7c35ce]"> Consultoria Técnica</h2>
+            <p class="">  Oferecemos orientação especializada para ajudar nossos clientes a tomar decisões informadas sobre tecnologia e implementação.</p>
           </div>
-          <div>
-            <h2 class="text-xl my-3 text-[#5E2B97]"> Suporte e Manutenção: </h2>
-            <p class="text-[#4B4B4B]">Garantimos que as soluções implantadas continuem a funcionar perfeitamente, oferecendo suporte contínuo e serviços de manutenção.</p>
+          <div class="flex-1">
+            <img src="/img/about-03.jpg" alt="Suporte e Manutenção" class="mx-auto">
+            <h2 class="text-xl my-3 text-[#7c35ce]"> Suporte e Manutenção</h2>
+            <p class="">Garantimos que as soluções implantadas continuem a funcionar perfeitamente, oferecendo suporte contínuo e serviços de manutenção.</p>
           </div>
-        </div>
       </div>
     </section>
-    <section class="mb-4">
-      <h1 class="text-5xl text-center text-[#5E2B97]">Entre em contato</h1>
+  </Container>
+    <Container class="bg-[--p-toolbar-background] py-10">
+      <section class="mb-4">
+      <h1 class="text-5xl text-center text-[#7c35ce]">Entre em contato</h1>
       <div class="flex mt-7">
         <div class="flex-1 my-auto">
-          <p class="text-2xl text-[#5E2B97] max-w-20rem">Diga como a HWR Consult pode te ajudar. Preencha o formulário abaixo e entraremos em contato o mais breve possível.</p>
+          <p class="text-2xl text-[#7c35ce] max-w-20rem">Diga como a HWR Consult pode te ajudar. Preencha o formulário abaixo e entraremos em contato o mais breve possível.</p>
         </div>
         <div class="flex-1">
           <InputText class="w-full mb-3" v-model="contact.name" type="text" size="large" placeholder="Nome" />
@@ -98,8 +126,10 @@ const contact = reactive<Contact>({
         </div>
       </div>
     </section>
-    <section class="mb-4 mt-7">
-      <h1 class="text-5xl text-center text-[#5E2B97]">Quem somos?</h1>
+    </Container>
+    <Container class="py-10">
+      <section class="py-10">
+      <h1 class="text-5xl text-center text-[#7c35ce]">Quem somos?</h1>
       <div class="flex mt-7">
         <div class="flex-1 flex flex-col items-center">
           <Avatar image="/img/hamilton.jpeg" class="mr-2" size="xlarge" shape="circle" />
@@ -128,6 +158,8 @@ const contact = reactive<Contact>({
         </div>
       </div>
     </section>
+    
+  </Container>
   </NuxtLayout>
 </template>
 
