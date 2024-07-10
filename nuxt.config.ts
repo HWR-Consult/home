@@ -22,7 +22,8 @@ export default defineNuxtConfig({
         { name: 'twitter:image', content: '/img/logo.png' }
       ],
       link: [
-        { rel: 'canonical', href: 'https://www.hwrtechconsult.com' }
+        { rel: 'canonical', href: 'https://www.hwrtechconsult.com' },
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
       ]
     }
   },
