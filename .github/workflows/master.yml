@@ -19,6 +19,9 @@ jobs:
       with:
         node-version: '22.0.0'  # ou a versão do Node.js que você está usando
 
+    - name: Install pnpm
+      run: npm install -g pnpm
+
     - name: Install dependencies
       run: pnpm install
 
