@@ -10,7 +10,6 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@nuxtjs/robots": "^3.0.0",
     "@primevue/themes": "^4.0.0",
     "nuxt": "^3.12.3",
     "primeflex": "^3.3.1",

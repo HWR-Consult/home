@@ -33,7 +33,6 @@ export default defineNuxtConfig({
   ],
   modules: [
     '@primevue/nuxt-module',
-    '@nuxtjs/robots',
     '@zadigetvoltaire/nuxt-gtm' 
   ],
   postcss: {
@@ -51,16 +50,6 @@ export default defineNuxtConfig({
         preset: Aura
       }
     }
-  },
-  sitemap: {
-    hostname: 'https://www.hwrtechconsult.com',
-    routes: [
-      '/', '/about', '/services', '/contact' // Adicione todas as rotas importantes aqui
-    ]
-  },
-  robots: {
-    UserAgent: '*',
-    Allow: '/'
   },
   gtm: {
     id: 'GTM-KZVCGRN7',
