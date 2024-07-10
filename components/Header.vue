@@ -21,14 +21,19 @@
     </template>
 
     <template #end>
-      <Button label="Quem somos" link />
-      <Button label="Como trabalhamos" link />
-      <Button label="Treinamento" link />
-      <Button label="Contato" link />
+      <Button class="header-buttons" label="Quem somos" link />
+      <Button class="header-buttons" label="Como trabalhamos" link />
+      <Button class="header-buttons" label="Treinamento" link />
+      <Button class="header-buttons" label="Contato" link />
     </template>
   </Toolbar>
 </template>
 
-<style scoped>
+<style>
+.header-buttons {
+ & .p-button-label {
+   color: #4B4B4B !important;
+ }
+}
 
 </style>
