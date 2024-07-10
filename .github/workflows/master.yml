@@ -17,13 +17,13 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '20.0.0'  # ou a versão do Node.js que você está usando
+        node-version: '22.0.0'  # ou a versão do Node.js que você está usando
 
     - name: Install dependencies
-      run: npm install
+      run: pnpm install
 
     - name: Build Nuxt.js application
-      run: npm run generate
+      run: pnpm run generate
 
     - name: Deploy to FTP server
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
