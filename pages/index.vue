@@ -36,7 +36,7 @@ const contact = reactive<Contact>({
       <h1 class="text-5xl text-center text-[#5E2B97]">
         O que fazemos?
       </h1>
-      <div class="flex mt-4">
+      <div class="flex mt-7">
         <div class="flex">
           <div class="flex-1">
             <h2 class="text-2xl text-[#5E2B97]">Nossa abordagem: </h2>
@@ -81,7 +81,7 @@ const contact = reactive<Contact>({
     </section>
     <section class="mb-4">
       <h1 class="text-5xl text-center text-[#5E2B97]">Entre em contato</h1>
-      <div class="flex mt-4">
+      <div class="flex mt-7">
         <div class="flex-1 my-auto">
           <p class="text-2xl text-[#5E2B97] max-w-20rem">Diga como a HWR Consult pode te ajudar. Preencha o formulário abaixo e entraremos em contato o mais breve possível.</p>
         </div>
@@ -93,8 +93,38 @@ const contact = reactive<Contact>({
             <InputText class="w-[49%]" v-model="contact.role" type="text" size="large" placeholder="Cargo" />
           </div>
           <InputText class="w-full mb-3" v-model="contact.message" type="text" size="large" placeholder="Como a HWR pode te ajudar?" />
-          <InputMask mask="(99) 99999-9999" class="w-full mb-3 custom-input" v-model="contact.phone" type="text" size="large" placeholder="Telefone para contato" />
+          <InputMask mask="(99) 99999-9999" class="w-full mb-6 custom-input" v-model="contact.phone" type="text" size="large" placeholder="Telefone para contato" />
           <Button :disabled="disableSave" icon="pi pi-send" class="bg-red" label="Enviar" severity="help" />
+        </div>
+      </div>
+    </section>
+    <section class="mb-4 mt-7">
+      <h1 class="text-5xl text-center text-[#5E2B97]">Quem somos?</h1>
+      <div class="flex mt-7">
+        <div class="flex-1 flex flex-col items-center">
+          <Avatar image="/img/hamilton.jpeg" class="mr-2" size="xlarge" shape="circle" />
+          <p class="text-xl font-bold mt-4">Hamilton Pinheiro</p>
+          <p>Engenheiro/Arquiteto Front-end</p>
+          <Button class="mt-2" as="a" href="https://www.linkedin.com/in/hamilton-gabriel/" target="_blank" rel="noopener" icon="pi pi-linkedin" aria-label="linkedin" severity="info" />
+        </div>
+        <div class="flex-1 flex flex-col items-center">
+          <Avatar image="/img/ruan.jpeg" class="mr-2" size="xlarge" shape="circle" />
+          <p class="text-xl font-bold mt-4">Ruan Felssner</p>
+          <p>Eng. de Software e
+            Analista de Requisitos</p>
+          <Button class="mt-2" as="a" href="https://www.linkedin.com/in/ruanfelssner/" target="_blank" rel="noopener" icon="pi pi-linkedin" aria-label="linkedin" severity="info" />
+        </div>
+        <div class="flex-1 flex flex-col items-center">
+          <Avatar image="/img/wender.jpeg" class="mr-2" size="xlarge" shape="circle" />
+          <p class="text-xl font-bold mt-4">Wender Galan</p>
+          <p>Engenheiro/Arquiteto Back-end</p>
+          <Button class="mt-2" as="a" href="https://www.linkedin.com/in/wendergalan/" target="_blank" rel="noopener" icon="pi pi-linkedin" aria-label="linkedin" severity="info" />
+        </div>
+        <div class="flex-1 flex flex-col items-center">
+          <Avatar image="/img/sergio.jpeg" class="mr-2" size="xlarge" shape="circle" />
+          <p class="text-xl font-bold mt-4">Sergio Souza</p>
+          <p>Especialista Logística e Professor de Dados</p>
+          <Button class="mt-2" as="a" href="https://www.linkedin.com/in/sergio-souza-85375022/" target="_blank" rel="noopener" icon="pi pi-linkedin" aria-label="linkedin" severity="info" />
         </div>
       </div>
     </section>
