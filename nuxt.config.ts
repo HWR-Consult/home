@@ -33,9 +33,8 @@ export default defineNuxtConfig({
   ],
   modules: [
     '@primevue/nuxt-module',
-    '@nuxtjs/sitemap', // Adiciona o módulo de sitemap
-    '@nuxtjs/robots',  // Adiciona o módulo de robots.txt
-    '@nuxtjs/gtm'      // Adiciona o módulo do GTM
+    '@nuxtjs/robots',
+    '@zadigetvoltaire/nuxt-gtm' 
   ],
   postcss: {
     plugins: {
@@ -64,8 +63,13 @@ export default defineNuxtConfig({
     Allow: '/'
   },
   gtm: {
-    id: 'GTM-KZVCGRN7', // Substitua pelo seu ID do GTM
+    id: 'GTM-KZVCGRN7',
     enabled: true,
     debug: true
+  },
+  runtimeConfig: {
+    gtm: {
+      id: 'GTM-KZVCGRN7' 
+    }
   }
 });
